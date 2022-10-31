@@ -1,6 +1,7 @@
 import React from 'react'
 
-const title = <h1>Hello React.js</h1>
+// React Element
+// const title = <h1>Hello React.js</h1>
 
 const list = (
     <ul>
@@ -10,10 +11,25 @@ const list = (
     </ul>
 )
 
+const List = () => {
+    return (
+        <ul>
+            <li>123</li>
+            <li>456</li>
+            <li>789</li>
+        </ul>
+    )
+}
+
+// React Component
+const Title = () => <h1>Hello React Component</h1>
+
 function App() {
     return (
         <div className="App">
-            {title} {list} {10 + 5}
+            <Title />
+            <List />
+            {list} {10 + 5}
         </div>
     )
 }
