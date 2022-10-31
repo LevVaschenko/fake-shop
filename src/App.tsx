@@ -13,11 +13,25 @@ const list = (
 
 const List = () => {
     return (
-        <ul>
-            <li>123</li>
-            <li>456</li>
-            <li>789</li>
-        </ul>
+        <React.Fragment>
+            <ul>
+                <li>123</li>
+                <li>456</li>
+                <li>789</li>
+            </ul>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
+                distinctio, id ad totam aperiam enim fuga quasi libero nostrum
+                architecto ipsum? A adipisci architecto fugit ab quam? Incidunt,
+                ipsa sapiente!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
+                distinctio, id ad totam aperiam enim fuga quasi libero nostrum
+                architecto ipsum? A adipisci architecto fugit ab quam? Incidunt,
+                ipsa sapiente!
+            </p>
+        </React.Fragment>
     )
 }
 
@@ -29,7 +43,6 @@ function App() {
         <div className="App">
             <Title />
             <List />
-            {list} {10 + 5}
         </div>
     )
 }
