@@ -13,7 +13,7 @@ const list = (
 
 const List = () => {
     return (
-        <React.Fragment>
+        <>
             <ul>
                 <li>123</li>
                 <li>456</li>
@@ -31,17 +31,29 @@ const List = () => {
                 architecto ipsum? A adipisci architecto fugit ab quam? Incidunt,
                 ipsa sapiente!
             </p>
-        </React.Fragment>
+        </>
     )
 }
 
 // React Component
 const Title = () => <h1>Hello React Component</h1>
 
+type TitleProps = {
+    title: string
+    text?: string
+}
+const TitleApp = (props: TitleProps) => (
+    <h1>
+        {props.text} {props.title}
+    </h1>
+)
+
 function App() {
     return (
         <div className="App">
             <Title />
+            <TitleApp title="App.js" />
+            <TitleApp title="Test.js" />
             <List />
         </div>
     )
