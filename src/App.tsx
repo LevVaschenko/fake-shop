@@ -40,20 +40,26 @@ const Title = () => <h1>Hello React Component</h1>
 
 type TitleProps = {
     title: string
-    text?: string
+    text: string
+    num: number
 }
-const TitleApp = (props: TitleProps) => (
-    <h1>
-        {props.text} {props.title}
-    </h1>
-)
+const TitleApp = (props: TitleProps) => {
+    return (
+        <>
+            <h1>
+                {props.text} {props.title}
+            </h1>
+            {props.num}
+        </>
+    )
+}
 
 function App() {
     return (
         <div className="App">
             <Title />
-            <TitleApp title="App.js" />
-            <TitleApp title="Test.js" />
+            <TitleApp title="App.js" text="Hi" num={10} />
+            <TitleApp title="Test.js" text="Hello" num={25} />
             <List />
         </div>
     )
