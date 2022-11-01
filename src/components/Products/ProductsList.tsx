@@ -2,6 +2,22 @@ import { Grid, Typography } from '@mui/material'
 import React from 'react'
 import ProductListItem from './ProductListItem'
 
+const user = {
+    name: "Jack",
+    age: 20,
+    sex: "Male"
+}
+
+// const name = user.name;
+
+// console.log(name)
+
+const {name, age, sex} = user
+
+console.log(name)
+console.log(age)
+console.log(sex)
+
 type Props = {}
 
 const ProductsList = (props: Props) => {
@@ -24,7 +40,7 @@ const ProductsList = (props: Props) => {
                 alignItems="center"
                 spacing={4}
             >
-                <Grid item>
+                <Grid item xs={12} sm={6} md={4}>
                     <ProductListItem
                         name="iPhone X"
                         description="This is iPhone X"
@@ -33,7 +49,7 @@ const ProductsList = (props: Props) => {
                         price={500}
                     />
                 </Grid>
-                <Grid item>
+                <Grid item xs={12} sm={6} md={4}>
                     <ProductListItem
                         name="iPhone XS"
                         description="This is iPhone XS"
@@ -42,7 +58,7 @@ const ProductsList = (props: Props) => {
                         price={300}
                     />
                 </Grid>
-                <Grid item>
+                <Grid item xs={12} sm={6} md={4}>
                     <ProductListItem
                         name="iPhone 12 Pro"
                         description="This is iPhone 12 Pro"
