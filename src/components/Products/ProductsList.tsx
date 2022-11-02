@@ -2,22 +2,6 @@ import { Grid, Typography } from '@mui/material'
 import React from 'react'
 import ProductListItem from './ProductListItem'
 
-const user = {
-    name: "Jack",
-    age: 20,
-    sex: "Male"
-}
-
-// const name = user.name;
-
-// console.log(name)
-
-const {name, age, sex} = user
-
-console.log(name)
-console.log(age)
-console.log(sex)
-
 type Props = {}
 
 const ProductsList = (props: Props) => {
