@@ -17,34 +17,42 @@ type Props = {
     image: string
 }
 
-class ProductListItem extends Component <Props> {
+type State = {
+    count: number
+}
+
+class ProductListItem extends Component<Props, State> {
+    constructor(props: Props) {
+        super(props)
+        this.state = {
+            count: 2,
+        }
+    }
     render() {
+        const { name, description, type, size, price, image }: Props =
+            this.props
         return (
             <Card className="product">
                 <CardContent>
                     <div className="product-image">
-                        <img src={this.props.image} alt="" />
+                        <img src={image} alt="" />
                     </div>
-                    <h4>{this.props.name}</h4>
-                    <p className="product-description">
-                        {this.props.description}
-                    </p>
+                    <h4>{name}</h4>
+                    <p className="product-description">{description}</p>
                     <div className="product-features">
                         <span>Type: </span>
-                        {this.props.type}
+                        {type}
                     </div>
                     <div className="product-features">
                         <span>Size: </span>
-                        {this.props.size} GB
+                        {size} GB
                     </div>
-                    <div className="product-price">
-                        Price: {this.props.price} $
-                    </div>
+                    <div className="product-price">Price: {price} $</div>
                     <div className="product-quantity">
                         <Button variant="contained" size="medium">
                             -
                         </Button>
-                        <TextField size="small" value="1" />
+                        <TextField size="small" value={this.state.count} />
                         <Button variant="contained" size="medium">
                             +
                         </Button>
