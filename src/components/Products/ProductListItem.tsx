@@ -22,12 +22,15 @@ type State = {
 }
 
 class ProductListItem extends Component<Props, State> {
-    constructor(props: Props) {
-        super(props)
-        this.state = {
-            count: 2,
-        }
+    // constructor(props: Props) {
+    //     super(props)
+
+    // }
+
+    state = {
+        count: 3,
     }
+
     render() {
         const { name, description, type, size, price, image }: Props =
             this.props
