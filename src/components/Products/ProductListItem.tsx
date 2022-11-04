@@ -1,4 +1,10 @@
-import { Button, Card, CardActions, CardContent } from '@mui/material'
+import {
+    Button,
+    Card,
+    CardActions,
+    CardContent,
+    TextField,
+} from '@mui/material'
 import React from 'react'
 import './ProductListItem.scss'
 
@@ -22,7 +28,7 @@ const ProductListItem = ({
     return (
         <Card className="product">
             <CardContent>
-                <div className='product-image'>
+                <div className="product-image">
                     <img src={image} alt="" />
                 </div>
                 <h4>{name}</h4>
@@ -36,6 +42,15 @@ const ProductListItem = ({
                     {size} GB
                 </div>
                 <div className="product-price">Price: {price} $</div>
+                <div className="product-quantity">
+                    <Button variant="contained" size="medium">
+                        -
+                    </Button>
+                    <TextField size="small" value="1" />
+                    <Button variant="contained" size="medium">
+                        +
+                    </Button>
+                </div>
             </CardContent>
             <CardActions className="button-wrap">
                 <Button variant="contained">Add to cart</Button>

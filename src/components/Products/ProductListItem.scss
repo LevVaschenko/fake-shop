@@ -28,5 +28,13 @@
         }
         text-align: center;
     }
+    .product-quantity {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        input {
+            text-align: center;
+        }
+    }
 }
 
