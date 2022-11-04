@@ -22,13 +22,19 @@ type State = {
 }
 
 class ProductListItem extends Component<Props, State> {
-    // constructor(props: Props) {
-    //     super(props)
-
-    // }
+    constructor(props: Props) {
+        super(props)
+        this.onIncrementClick = this.onIncrementClick.bind(this)
+    }
 
     state = {
-        count: 3,
+        count: 1,
+    }
+
+    onIncrementClick () {
+        this.setState((prevState: State) => ({
+            count: prevState.count + 1,
+        }))
     }
 
     render() {
@@ -56,7 +62,7 @@ class ProductListItem extends Component<Props, State> {
                             -
                         </Button>
                         <TextField size="small" value={this.state.count} />
-                        <Button variant="contained" size="medium">
+                        <Button variant="contained" size="medium" onClick={this.onIncrementClick}>
                             +
                         </Button>
                     </div>
