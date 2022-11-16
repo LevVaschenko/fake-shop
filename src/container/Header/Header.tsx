@@ -9,9 +9,14 @@ import Menu from 'components/Menu/Menu'
 import CartHeader from 'components/Cart/CartHeader'
 import logo from 'assets/logo.svg'
 
-type Props = {}
+type Props = {
+    cartData: {
+        totalCount: number
+        totalPrice: number
+    }
+}
 
-const Header = (props: Props) => {
+const Header = ({ cartData }: Props) => {
     return (
         <>
             <AppBar position="static">
@@ -31,10 +36,13 @@ const Header = (props: Props) => {
                             component="div"
                             sx={{ flexGrow: 1 }}
                         >
-                            <img src={logo} />
+                            <img src={logo} alt="" />
                         </Typography>
                         <Menu />
-                        <CartHeader />
+                        <CartHeader
+                            totalCount={cartData.totalCount}
+                            totalPrice={cartData.totalPrice}
+                        />
                     </Toolbar>
                 </Container>
             </AppBar>
