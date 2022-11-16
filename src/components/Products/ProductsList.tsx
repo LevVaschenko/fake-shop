@@ -14,10 +14,10 @@ type ProductProps = {
 }
 
 type Props = {
-    addProductsToCart:(count:number, price: number) => void
+    addProductsToCart: (count: number, price: number) => void
 }
 
-const ProductsList = ({addProductsToCart}: Props) => {
+const ProductsList = ({ addProductsToCart }: Props) => {
     return (
         <>
             <Typography
