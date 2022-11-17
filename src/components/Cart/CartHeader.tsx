@@ -1,15 +1,20 @@
 import React from 'react'
+import { keys } from 'lodash'
 
 type Props = {
-    totalCount: number
-    totalPrice: number
+    productsInCart: {
+        [id: number]: number
+    }
 }
 
-const CartHeader = ({ totalCount, totalPrice }: Props) => {
+const CartHeader = ({ productsInCart }: Props) => {
     return (
         <div>
-            <div>{totalCount}</div>
-            <div>{totalPrice}$</div>
+            {keys(productsInCart).map((productId) => (
+                <div key={productId}>
+                    {productId}: {productsInCart[parseInt(productId)]}
+                </div>
+            ))}
         </div>
     )
 }
