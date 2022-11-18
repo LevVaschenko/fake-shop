@@ -14,20 +14,21 @@ type AppProps = {
 const App = (props: Props) => {
     const [productsInCart, setProductsInCart] = useState<AppProps>({
         1: 5,
-        2: 5
+        2: 5,
     })
 
-    const addProductToCart = (count: number, price: number) => {
-        // setCartData((prevState: CartData) => ({
-        //     totalCount: prevState.totalCount + count,
-        //     totalPrice: prevState.totalPrice + count * price,
-        // }))
+    const addProductToCart = (id: number, count: number) => {
+        setProductsInCart((prevState:AppProps) => ({
+            ...prevState,
+            [id]: (prevState[id] || 0) + count,
+        }))
     }
 
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header productsInCart={productsInCart} />
+            <button onClick={() => addProductToCart(2, 5)}>Add to cart</button>
             <Main addProductsToCart={addProductToCart} />
             <Footer />
         </StyledEngineProvider>
