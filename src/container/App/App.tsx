@@ -13,8 +13,8 @@ type AppProps = {
 
 const App = (props: Props) => {
     const [productsInCart, setProductsInCart] = useState<AppProps>({
-        1: 5,
-        2: 5,
+        1: 0,
+        2: 0,
     })
 
     const addProductToCart = (id: number, count: number) => {
@@ -28,7 +28,6 @@ const App = (props: Props) => {
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header productsInCart={productsInCart} />
-            <button onClick={() => addProductToCart(2, 5)}>Add to cart</button>
             <Main addProductsToCart={addProductToCart} />
             <Footer />
         </StyledEngineProvider>

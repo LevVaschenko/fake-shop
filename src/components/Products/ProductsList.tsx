@@ -14,7 +14,7 @@ type ProductProps = {
 }
 
 type Props = {
-    addProductsToCart: (count: number, price: number) => void
+    addProductsToCart: (id: number, count: number) => void
 }
 
 const ProductsList = ({ addProductsToCart }: Props) => {
@@ -49,6 +49,7 @@ const ProductsList = ({ addProductsToCart }: Props) => {
                     }: ProductProps) => (
                         <Grid item xs={12} sm={3} md={4} key={id}>
                             <ProductListItem
+                                id={id}
                                 name={name}
                                 description={description}
                                 type={type}

@@ -3,14 +3,14 @@ import Home from 'pages/Home/Home'
 import React from 'react'
 
 type Props = {
-    addProductsToCart: (count: number, price: number) => void
+    addProductsToCart: (id: number, count: number) => void
 }
 
 const Main = ({ addProductsToCart }: Props) => {
     return (
         <main>
             <Container maxWidth="lg">
-                <Home addProductsToCart={addProductsToCart} />
+                <Home addProductsToCart={addProductsToCart}/>
             </Container>
         </main>
     )
