@@ -18,7 +18,7 @@ const App = (props: Props) => {
     })
 
     const addProductToCart = (id: number, count: number) => {
-        setProductsInCart((prevState:AppProps) => ({
+        setProductsInCart((prevState: AppProps) => ({
             ...prevState,
             [id]: (prevState[id] || 0) + count,
         }))
@@ -28,7 +28,10 @@ const App = (props: Props) => {
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header productsInCart={productsInCart} />
-            <Main addProductsToCart={addProductToCart} />
+            <Main
+                addProductsToCart={addProductToCart}
+                productsInCart={productsInCart}
+            />
             <Footer />
         </StyledEngineProvider>
     )
