@@ -10,11 +10,16 @@ import { Route, Routes } from 'react-router-dom'
 type Props = {
     addProductsToCart: (id: number, count: number) => void
     productsInCart: {
-        [id: number]:number
+        [id: number]: number
     }
+    removeProductFromCart: (id: number) => void
 }
 
-const Main = ({ addProductsToCart, productsInCart }: Props) => {
+const Main = ({
+    addProductsToCart,
+    productsInCart,
+    removeProductFromCart,
+}: Props) => {
     return (
         <main>
             <Container maxWidth="lg">
@@ -26,7 +31,15 @@ const Main = ({ addProductsToCart, productsInCart }: Props) => {
                     <Route path="about" element={<AboutPage />} />
                     <Route path="shipping" element={<ShippingPage />} />
                     <Route path="payment" element={<PaymentPage />} />
-                    <Route path="cart" element={<CartPage productsInCart={productsInCart}/>} />
+                    <Route
+                        path="cart"
+                        element={
+                            <CartPage
+                                productsInCart={productsInCart}
+                                removeProductFromCart={removeProductFromCart}
+                            />
+                        }
+                    />
                 </Routes>
             </Container>
         </main>
