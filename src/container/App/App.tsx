@@ -4,6 +4,7 @@ import Header from 'container/Header/Header'
 import Main from 'container/Main/Main'
 import Footer from 'container/Footer/Footer'
 import { StyledEngineProvider } from '@mui/material'
+import { omit } from 'lodash'
 
 type Props = {}
 
@@ -24,6 +25,10 @@ const App = (props: Props) => {
         }))
     }
 
+    const removeProductFromCart = (id: number) => {
+        setProductsInCart((prevState: AppProps) => omit(prevState, id))
+    }
+
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
@@ -31,6 +36,7 @@ const App = (props: Props) => {
             <Main
                 addProductsToCart={addProductToCart}
                 productsInCart={productsInCart}
+                removeProductFromCart={removeProductFromCart}
             />
             <Footer />
         </StyledEngineProvider>
