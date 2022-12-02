@@ -28,15 +28,17 @@
         }
         text-align: center;
     }
-    .product-quantity {
+    
+}
+
+.product-quantity {
         display: flex;
         justify-content: center;
-        margin-top: 10px;
+        margin: 20px 0;
         input {
             text-align: center;
         }
     }
-}
 
 .change-color-button {
     color: white;

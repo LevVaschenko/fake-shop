@@ -1,11 +1,6 @@
-import {
-    Button,
-    Card,
-    CardActions,
-    CardContent,
-    TextField,
-} from '@mui/material'
-import React, { useState } from 'react'
+import { Button, Card, CardActions, CardContent } from '@mui/material'
+import Quantity from 'components/Quantity/Quantity'
+import { useState } from 'react'
 import './ProductListItem.scss'
 
 type Props = {
@@ -69,25 +64,11 @@ const ProductListItem = ({
                         Change Color
                     </button>
                 </div>
-                <div className="product-quantity">
-                    <Button
-                        variant="contained"
-                        size="medium"
-                        onClick={onDecrementClick}
-                        disabled={count <= 1}
-                    >
-                        -
-                    </Button>
-                    <TextField size="small" value={count} />
-                    <Button
-                        variant="contained"
-                        size="medium"
-                        onClick={onIncrementClick}
-                        disabled={count >= 5}
-                    >
-                        +
-                    </Button>
-                </div>
+                <Quantity
+                    onDecrementClick={onDecrementClick}
+                    onIncrementClick={onIncrementClick}
+                    count={count}
+                />
             </CardContent>
             <CardActions className="button-wrap">
                 <Button
