@@ -1,4 +1,5 @@
 import ProductsList from 'components/Products/ProductsList'
+import Reviews from 'components/Reviews/Reviews'
 import React from 'react'
 
 type Props = {
@@ -9,6 +10,7 @@ const Home = ({ addProductsToCart }: Props) => {
     return (
         <>
             <ProductsList addProductsToCart={addProductsToCart} />
+            <Reviews />
         </>
     )
 }
