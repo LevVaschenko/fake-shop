@@ -3,20 +3,22 @@ import CartTotal from 'components/Cart/CartTotal'
 import CartProductList from 'components/Cart/CartProductList'
 import { Grid, Typography } from '@mui/material'
 import CartProductListItemExtended from 'components/Cart/CartProductListItemExtended'
+import { useAppSelector } from 'redux/hooks'
+import { Link } from 'react-router-dom'
 
-type Props = {
+type Props = {}
+
+type ProductsInCartProps = {
     productsInCart: {
         [id: number]: number
     }
-    removeProductFromCart: (id: number) => void
-    changeProductQuantity: (id: number, count: number) => void
 }
 
-const CartPage = ({
-    productsInCart,
-    removeProductFromCart,
-    changeProductQuantity,
-}: Props) => {
+const CartPage = () => {
+    const productsInCart = useAppSelector(
+        (state: ProductsInCartProps) => state.productsInCart
+    )
+
     return (
         <div>
             <Typography
@@ -32,11 +34,10 @@ const CartPage = ({
                 <CartProductList
                     productsInCart={productsInCart}
                     CartItem={CartProductListItemExtended}
-                    removeProductFromCart={removeProductFromCart}
-                    changeProductQuantity={changeProductQuantity}
                 />
             </Grid>
             <CartTotal productsInCart={productsInCart} />
+            <Link to="/checkout">Proceed to checkout</Link>
         </div>
     )
 }
