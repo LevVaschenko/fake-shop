@@ -4,6 +4,7 @@ import { useState } from 'react'
 import './ProductListItem.scss'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
+import { useAppSelector } from 'redux/hooks'
 
 type Props = {
     id: number
@@ -14,7 +15,6 @@ type Props = {
     price: number
     image: string
     addProductsToCart: (id: number, count: number) => void
-    isLiked?: boolean
 }
 
 const ProductListItem = ({
@@ -26,7 +26,6 @@ const ProductListItem = ({
     price,
     image,
     addProductsToCart,
-    isLiked = false,
 }: Props) => {
     const [count, setCount] = useState<number>(1)
     const [color, setColor] = useState<string>('Green')
@@ -41,6 +40,8 @@ const ProductListItem = ({
         setColor((prevState: string) =>
             prevState === 'Green' ? 'Red' : 'Green'
         )
+
+    const isLiked = useAppSelector((state) => state.productsLikeState[id])
 
     return (
         <Card className="product">
