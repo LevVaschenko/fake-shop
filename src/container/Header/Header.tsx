@@ -9,13 +9,9 @@ import Menu from 'components/Menu/Menu'
 import CartHeader from 'components/Cart/CartHeader'
 import logo from 'assets/logo.svg'
 
-type Props = {
-    productsInCart: {
-        [id: number]: number
-    }
-}
+type Props = {}
 
-const Header = ({ productsInCart }: Props) => {
+const Header = () => {
     return (
         <>
             <AppBar position="static">
@@ -38,7 +34,7 @@ const Header = ({ productsInCart }: Props) => {
                             <img src={logo} alt="" />
                         </Typography>
                         <Menu />
-                        <CartHeader productsInCart={productsInCart} />
+                        <CartHeader />
                     </Toolbar>
                 </Container>
             </AppBar>
