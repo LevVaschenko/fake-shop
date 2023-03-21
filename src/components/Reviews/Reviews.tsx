@@ -99,6 +99,7 @@ const Reviews = (props: Props) => {
                     />
                 </div>
                 <TextareaAutosize
+                    style={{ width: '195px', marginBottom: '10px' }}
                     minRows={5}
                     placeholder="Your Message"
                     value={newReview.text}
