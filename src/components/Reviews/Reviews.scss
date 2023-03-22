@@ -1,0 +1,40 @@
+.review-form {
+    margin-top: 20px;
+}
+
+.review-prompt {
+    font-size: 18px;
+    margin-left: 10px;
+    margin-bottom: 4px;
+}
+
+.leave-review {
+    margin-bottom: 15px;
+}
+
+.review-name {
+    margin-left: 4px;
+}
+
+.review-text-input {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    width: 230px;
+}
+
+.review-send-button {
+    background-color: #1976d2;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    padding: 12px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}

@@ -1,6 +1,7 @@
 import { Typography } from '@mui/material'
 import axios from 'axios'
 import React, { useState } from 'react'
+import './CheckoutPage.scss'
 
 type Props = {}
 
@@ -33,6 +34,12 @@ const CheckoutPage = (props: Props) => {
 
     const orderSend = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        
+        if (!orderData.name || !orderData.address) {
+            alert('All fields are required')
+            return
+        }
+        
         axios
             .post(
                 'https://my-json-server.typicode.com/kznkv-skillup/server/orders',
@@ -53,24 +60,34 @@ const CheckoutPage = (props: Props) => {
 
     const renderForm = () => {
         return (
-            <form onSubmit={orderSend}>
+            <form onSubmit={orderSend} className="form" noValidate>
                 <div>
+                    <div className='form-prompt'>
+                        Name*
+                    </div>
                     <input
                         type="text"
                         value={orderData.name}
                         onChange={handleName}
-                        placeholder="Your name"
+                        className='form-your-name form-input'
+                        required
                     />
                 </div>
                 <div>
+                    <div className='form-prompt'>
+                        Address*
+                    </div>
                     <input
                         type="text"
                         value={orderData.address}
                         onChange={handleAddress}
-                        placeholder="Your address"
+                        className='form-your-address form-input'
+                        required
                     />
                 </div>
-                <button type="submit">Send</button>
+                <button type="submit" className="send-button">
+                    Send
+                </button>
             </form>
         )
     }

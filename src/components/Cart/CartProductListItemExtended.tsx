@@ -71,6 +71,9 @@ const CartProductListItemExtended = ({ product, productCount }: Props) => {
                         count={productCount}
                     />
                     <Button
+                        style={{
+                            marginLeft: '4px',
+                        }}
                         variant="contained"
                         onClick={() =>
                             dispatch(removeProductFromCart(product.id))

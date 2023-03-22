@@ -1,0 +1,37 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    height: 570px;
+}
+
+.form-prompt {
+    font-size: 18px;
+}
+
+.form-your-name, .form-your-address {
+    margin-bottom: 10px;
+}
+
+.form-input {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+}
+
+.send-button {
+    background-color: #1976d2;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    padding: 12px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+}

@@ -7,6 +7,7 @@ import {
     Typography,
 } from '@mui/material'
 import React, { useState } from 'react'
+import './Reviews.scss'
 
 type Props = {}
 
@@ -84,32 +85,34 @@ const Reviews = (props: Props) => {
                     </CardContent>
                 </Card>
             ))}
-            <form onSubmit={onSend}>
-                <Typography variant="h5">Please leave a review</Typography>
-                <div
-                    style={{
-                        margin: '15px 0',
-                    }}
-                >
-                    <TextField
-                        size="small"
-                        label="Your Name"
+            <form onSubmit={onSend} className="review-form">
+                <Typography variant="h5" className='leave-review'>Please leave a review</Typography>
+                <div>
+                    <div className="review-prompt">
+                        Your Name
+                    </div>
+                    <input
+                        type="text"
                         value={newReview.name}
                         onChange={handleChangeName}
+                        className="review-text-input review-name"
                     />
                 </div>
-                <TextareaAutosize
-                    style={{ width: '195px', marginBottom: '10px' }}
-                    minRows={5}
-                    placeholder="Your Message"
-                    value={newReview.text}
-                    onChange={handleChangeText}
-                />
                 <div>
-                    <Button type="submit" variant="outlined">
-                        Send
-                    </Button>
+                    <div className="review-prompt">
+                        Your Message
+                    </div>
+                    <TextareaAutosize
+                        minRows={5}
+                        placeholder="Your Message"
+                        value={newReview.text}
+                        onChange={handleChangeText}
+                        className="review-text-input"
+                    />
                 </div>
+                <button type="submit" className="review-send-button">
+                    Send
+                </button>
             </form>
         </>
     )

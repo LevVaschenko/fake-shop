@@ -1,6 +1,5 @@
 import { keys } from 'lodash'
 import { getProductsObject, Product } from 'components/Products/productsArray'
-import CartProductListItem from './CartProductListItem'
 import { useAppSelector } from 'redux/hooks'
 
 type ProductsObject = {
