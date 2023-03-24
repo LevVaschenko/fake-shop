@@ -16,7 +16,7 @@ export const initialState:Product[] = []
 export const fetchProducts = createAsyncThunk<Product[],undefined>(
     'products/fetchProducts',
     async () => {
-        const res = await axios.get("https://run.mocky.io/v3/7db41021-bc7b-4d03-98d4-96c6b718daff")
+        const res = await axios.get("https://run.mocky.io/v3/48082aa7-93c5-4216-acf9-68d9da064bc0")
         console.log(res.data)
         return res.data.products
     }

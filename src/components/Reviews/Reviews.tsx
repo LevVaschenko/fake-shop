@@ -20,11 +20,11 @@ const Reviews = (props: Props) => {
     const arrReviews: Review[] = [
         {
             name: 'Ava',
-            text: "I am addicted to this chair! It was pretty easy to set up. Make sure you don't accidentally nail the back pillow to the thingy that holds the butt and the back pieces together",
+            text: "I am very happy with my purchase at this store! Here I found my favorite iPhone at a great price, and it was the best purchase of my life! In addition, the store provided fast delivery and quality service, which caused only positive emotions",
         },
         {
             name: 'Stan Woods',
-            text: "Chair looks as advertised, assembly took less than 10 min. The only drawback would be the way arm is mounted to the seat. It's a little weak.",
+            text: "Thank you for the wonderful service and excellent selection of iPhones in your store! I was pleasantly surprised with the quick delivery and high quality of the product. Great store for those who want to buy a quality iPhone at an affordable price. I recommend it!",
         },
     ]
 
@@ -67,7 +67,8 @@ const Reviews = (props: Props) => {
                 variant="h4"
                 sx={{
                     textAlign: 'center',
-                    margin: '40px 0',
+                    marginTop: '40px',
+                    marginBottom: '0px',
                 }}
             >
                 Reviews
@@ -80,7 +81,7 @@ const Reviews = (props: Props) => {
                     key={i}
                 >
                     <CardContent>
-                        <div>{name}</div>
+                        <div className='reviews-name'>{name}</div>
                         <div>{text}</div>
                     </CardContent>
                 </Card>
